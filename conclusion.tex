@@ -1,0 +1,11 @@
+\section{ Limitations and Future Work}
+
+We present a novel method to compute collision-free paths for the homogeneous multi-agent motion planning with arbitrarily-shaped obstacles. We use the medial-axis of the workspace and our approach is resolution-complete. To the best of our knowledge, this is the first approach that can provide such guarantees for arbitrarily-shaped obstacles and we observe up to $100$X speedup over prior methods.
+%Compared to former centralized methods, we are the first method that can handle the arbitrarily-shaped obstacles while giving completeness.
+%Our method can be classified to geometric decomposition algorithms. Unlike previous methods, our method is fast and the computational complexity is not limited to the polygonal shape of %obstacles.
+Our approach has some limitations. It is limited to homogeneous disc-like agents and does not take into account dynamics constraints. Furthermore, we can't provide any optimality guarantees.
+%Currently, our method can only handle the agents without considering their dynamic constraints, and the shape of the agent is limited to circle. Additionally, we only give one existed solution without consider the optimal one. 
+There are many avenues for future work. In addition to overcoming
+these limitations, we would like to design new methods based on medial-axis to simulate human-like behaviors or planning for high-DOF agents. Instead of moving one agent at a time, we would like to develop approaches that allow multiple agents to move simultaneously in complex scenarios.
+%in dense crowd scenarios.
+%Finally, instead of the algorithm that moves one agent at a time, we would like to moving multiple agents in once and simulating hundreds of agents in complex scenarios.  

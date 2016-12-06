@@ -1,0 +1,74 @@
+\section{Resolution-Completeness}
+
+In this section, we present an algorithm for an agent's intra-cluster movements and prove its completeness. Next we present a criterion to connect all possible clusters.
+%To extend this result into the global environment, we present another algorithm with a criterion to connect all of the possible clusters together. 
+Based on checking whether a cluster $\mathbf{C}$ can be connected with another cluster whose incident circle $A(\mathbf v,ran)$ includes the goal position of an agent $\mathbf{a} \in \mathbf{C}$, we conclude whether there is path for $\mathbf{a}$ to reach its goal. 
+ 
+ %\begin{algorithm}[!th]
+  % \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+  % \Input{A set of agents in an cluster $\mathbf{a_0, a_1, ..., a_n \in A}$, assume both of their start positions
+ %  and goal positions are in its incident circle  $p_0, p_1, ..., p_n \in  A(v,ran), p'_0, p'_1, ..., p'_n \in A(v,ran)$ }
+ %  \Output{agents are moved to their individual goals. }
+ %  \BlankLine
+ % \tcc{ }
+ %  \For{$\mathbf{a_i}, i = 0:n$}{
+ %    \If{$\mathbf{a_i}$ does not connect with an empty element $\mathbf e \in A$}{
+  %       Exchange an $\mathbf e \in A$ to the nearby position of $\mathbf{a_i}$ \\
+ %    }
+  %   \If{$\mathbf{p_i} \in \mathbf{T}$ and $\mathbf{p'_i} \in \mathbf{T}$}{
+  %       Do intra-loop exchange to move $\mathbf{a_i}$ to $\mathbf{p'_i}$\\
+  %   }
+  %   \Else{
+  %       Do inter-loop exchange to move $\mathbf{a_i}$ to $\mathbf{p'_i}$\\
+ %    }
+ %  }
+  % \caption{Intra-movement algorithm}
+  % \label{algo:intramovement}
+ %\end{algorithm}
+ 
+\subsection{Completeness of Intra-cluster Computation}
+
+
+We extend Lemma \ref{lem:min} to the following lemma, which gives the minimum spatial requirement to implement an exchange algorithm inside of a circle.
+
+\vspace*{.05in}
+\begin{lemma}
+Assume a cluster $\mathbf{A}$ and its incident circle $A(\mathbf v,ran)$ is non-full. $\forall \mathbf{a} \in \mathbf{A}$, we can find a complete path from its start position $\mathbf{p_a} \in A(\mathbf v,ran)$ to the goal position $\mathbf{p_a'} \in A(\mathbf v,ran)$ and we refer to that cluster $\mathbf{A}$ is complete. 
+\label{lem:intra-unit complete}
+\end{lemma}
+
+
+\subsection{Connect Clusters}
+So far we have shown that for any agent, if both its start position and goal position are in a non-full circle, then our algorithm can find a path to reach its goal. 
+In this section, we present an algorithm that connects such clusters together to extend the inter-loop exchange algorithm to  inter-cluster level.
+We show that all the agents can move around in the connected cluster. Based on this criterion, the problem of path existence and computation for an agent reduces to checking whether the agent's goal position is within the connected cluster.
+%and their relevant area.
+%With this criterion, it turns out that checking if there exists a solution to move an agent to its goal has been changed into checking whether the agent's goal position is at a connected cluster. 
+
+
+\begin{theorem}
+Suppose we have a path $\mathcal{P}\mathbf{(v, v')} \subseteq \mathcal{G}$, that connects two areas $A(\mathbf v,ran)$ and $A(\mathbf v',ran')$ with their corresponding clusters $\mathbf{A}$ and $\mathbf{A'}$.
+Then, if $\{\mathcal{P}\mathbf{(v, v')}\ |\ \forall A(\mathbf p,ran''),\ \mathbf{p} \in \mathcal{P}\mathbf{(v, v')},\ \forall \mathbf{a} \notin \mathbf{A} \cup \mathbf{A'},\ \mathbf{a} \cap A(\mathbf p,ran) = \varnothing\}$, we label the path $\mathcal{P}\mathbf{(v, v')}$ as clean.
+\label{them:clean}
+\end{theorem}
+
+Note that we mentioned that $\mathcal{G}$ does not include the points whose incident circles' radius are smaller than the agent's radius. Thus, for any incident circle of $\mathcal{P}\mathbf{(v, v')}$, it has the capability to accommodate at least one agent. 
+With this assumption, Theorem \ref{them:clean} can be explained as, if $A(\mathbf v', ran)$ is non-full, then it has an element $ \exists \mathbf{c} \in A(\mathbf v,ran)$ that can move along $\mathcal{P}\mathbf{(v, v')}$ to reach $A(\mathbf v', ran)$ and it does not touch any other cluster's agent during this movement. 
+
+\begin{definition}
+For two areas $A(\mathbf v, ran)$ and $ A(\mathbf v', ran')$, we call them connected if there exists a clean path $\mathcal{P(\mathbf v,\mathbf v')}$ that connects them. 
+\label{def:connect}
+\end{definition}
+
+
+\begin{lemma}
+If two areas $A(\mathbf v, ran)$ and $A(\mathbf v', ran')$ are connected, and at least one of them is non-full, then all of their elements can reach any position if $ \mathbf{p} \in A(\mathbf v, ran) \cup A(\mathbf v', ran')$ .
+\label{lem:intertcluster}
+\end{lemma}
+
+
+\begin{lemma}
+Suppose all clusters are connected. If there is one cluster whose area is not-full, or we can remove an agent from a full area to a new location without impacting the clearance of all the paths between the clusters, then we can find a solution to move all agents to their goals. Otherwise, there is no solution (i.e. path) for the current scenario.
+\label{lem:complete}
+\end{lemma}
+The last lemma proves the completeness of our algorithm.

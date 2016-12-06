@@ -11,7 +11,7 @@
 
 
 % The paper headers
-\markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2015}%
+\markboth{Final Project of comp782 motion planning}%
 {Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
 
 
@@ -32,19 +32,12 @@ Multi-agent, resolution-complete, Arbirarily-Shaped, Medial-Axis.
 \IEEEpeerreviewmaketitle
 
 \section{Introduction}
-\IEEEPARstart{T}{his} demo file is intended to serve as a ``starter file''
-for IEEE journal papers produced under \LaTeX\ using
-IEEEtran.cls version 1.8b and later.
-% You must have at least 2 lines in the paragraph with the drop letter
-% (should never be an issue)
-I wish you the best of success.
-
-\subsection{Subsection Heading Here}
-Subsection text here.
+\IEEEPARstart{M}{ulti-agent} motion planning has been studied extensively in artificial intelligence, robotics and computer games.
+The objective is to navigate multiple agents from a set of start positions to corresponding goal positions while avoiding inter-agent collisions as well as collisions with obstacles.
+At a broad level, prior approaches can be classified into two categories: decentralized and centralized methods. 
+For decentralized algorithms, the planner computes the trajectory for each agent separately for a short time horizon and uses some sort of coordination to avoid intersection between these local trajectories. On the other hand, the centralized methods combine the configuration degrees of each agent into one large high DOF (degree-of-freedom) system, which computes their paths together. Such centralized methods can provide completeness, including resolution-completeness or probabilistic-completeness guarantees. However, they are practical for scenarios with only a few low DOF agents.
 
 
-\subsubsection{Subsubsection Heading Here}
-Subsubsection text here.
 
 %\begin{figure}[!t]
 %\centering
@@ -56,8 +49,13 @@ Subsubsection text here.
 %\label{fig_sim}
 %\end{figure}
 
-\section{Conclusion}
-The conclusion goes here.
+\input{priorwork.tex}
+%\input{method.tex}
+%\input{completeness.tex}
+%\input{analysis.tex}
+%\input{Implementation.tex}
+\input{conclusion.tex}
+
 
 \appendices
 \section{Proof of the First Zonklar Equation}
@@ -70,7 +68,7 @@ Appendix two text goes here.
 
 
 % use section* for acknowledgment
-\section*{Acknowledgment}
+\section{Acknowledgment}
 The authors would like to thank...
 
 
@@ -80,15 +78,23 @@ The authors would like to thank...
   \newpage
 \fi
 
-\begin{thebibliography}{1}
 
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
 
-\end{thebibliography}
+\bibliographystyle{IEEEtran}
+\bibliography{reference}
 
-% that's all folks
+
+
+%\begin{thebibliography}{1}
+%
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+%
+%\end{thebibliography}
+
+
+
 \end{document}
 
 

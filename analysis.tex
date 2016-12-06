@@ -1,0 +1,8 @@
+\section{Analysis}
+\vspace*{+0.15in}
+In this section, we analyze the computational complexity of our algorithm. 
+The overall algorithm includes two parts, medial-axis computation and multi-agent motion planning. Since we use a sample-based approach to compute the medial axis, its complexity is  $O(klogk)$  ~\cite{giesen2012medial}, for $k$ samples.
+%Because we use the sampling methods to compute the medial-axis in this paper, the computational complexity is relevant to the number of samples. Assume the number of samples is $k$; then the complexity is $O(klogk)$  ~\cite{giesen2012medial}.
+For path computation, assume we have $n$ agents and we move one agent at a time and the agent's movement takes $m$ steps to reach the goal position. In the worst case, $n-1$ agents may have to move temporarily for this one agent and that takes $a$ steps. As a result, the overall complexity is bounded by $O(a n^2)$. So the overall complexity is bounded by $O(klogk + an^2)$.
+\vspace*{+0.15in}
+%then the agent's movement costs $m$ steps to reach its goal position. However, the rest of the agents would be temporarily moved, as in the algorithms that we illustrated. Assume for each agent's movements(reach its goal position, there are at most $n-1$ agents would be interrupted and for return to their primitive positions, it will cost $a$ steps, then the computational complexity is $O(an^2)$. If we add two steps together, the overhead is $O(klogk + an^2)$, where $N$ is the number of samples on the obstacle's boundary.

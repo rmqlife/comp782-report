@@ -1,0 +1,22 @@
+\section{Prior Work}
+
+The multi-agent path planning problem has been extensively studied in different areas. We give a brief overview of prior work in this area. 
+
+\subsection{Decentralized Methods}
+In this approach, each agent moves independently and the method computes a collision-free trajectory for a short time horizon. These techniques are commonly used in games, crowd simulation, and robotics. Some of the widely used methods are based on social forces~\cite{helbing1995social}, rule-based methods ~\cite{pelechano2007controlling}, or geometric optimization ~\cite{yeh2008composite,van2011reciprocal}, etc. However, there are no guarantees that these methods can find a collision-free solution, if one exists. Moreover, the agents can get stuck in deadlocks, though many techniques have been proposed to overcome these problems ~\cite{he2013meso,kimmel2012maintaining}. 
+
+Another class of methods is based on decoupled algorithms. These techniques first calculate the agents' trajectories without considering each other as obstacles and then schedule their trajectories such that the agents avoid each other~\cite{cui2012pareto,sanchez2002using,peng2005coordinating,velagapudi2010decentralized}. These algorithms can handle a continuous workspace, but cannot provide completeness guarantees.  
+Other decoupled algorithms ~\cite{luna2011push,de2013push,sajid2012multi} use different kind of movements when agents get close to each other. These are mostly limited to discrete workspaces.
+
+\subsection{Centralized Methods}
+These methods theoretically treat all of the agents' configurations as one unified high-DOF system and compute the collision-free paths for them. Different methods to compute the paths have been proposed. These include traditional searching ~\cite{katsev2013efficient,hart1968formal,korf1985depth,felner2012partial} and  probabilistic path planning ~\cite{carpin2002parallel,ferguson2006replanning,ferner2013odrm}. In practice, since these methods compute the paths for all agents at once, so they are limited to a few agents.
+%The problem is the complexity of computation is exponentially increased with the number of agents and they usually only can handle few agents in once.
+
+Another category of centralized methods is based on geometric decomposition techniques. ~\cite{dresner2008multiagent,calinescu2008reconfigurations,vsvestka1998coordinated} divide the workspace into several sub-areas, and agents move from one to another until they reach their goals. These algorithms control the agents' movements so that they avoid each other when they are in close proximity. While these algorithms work in a continuous workspace, the boundaries of this workspace are limited to polygonal shapes and the  complexity of the algorithms increases as a function of the number of  obstacle edges. 
+%In the running stage, the computational complexity of their methods is bounded by the number of agents as well as the number of obstacles' edges. 
+\cite{DBLP:journals/corr/SoloveyYZH15} present  an optimal algorithm, but the complexity is $O(n^2m^2)$, where $n$ and $m$ are the number of agents and the number of obstacles' edges, respectively. In their benchmarks, the algorithm~\cite{DBLP:journals/corr/SoloveyYZH15} takes hundreds or thousands of seconds to calculate a solution. Our approach is also a geometric decomposition method. We can handle arbitrarily-shaped obstacles and exhibit up to $100$X speedup over~\cite{DBLP:journals/corr/SoloveyYZH15}.
+%In our case, the complexity in terms  number of agents and the complexity of obstacles' edges is separated. This keeps the overhead around $O(n^2)$, which means we only need to spend few seconds to simulate their benchmarks.
+ 
+
+
+ 

@@ -1,0 +1,43 @@
+\section{Implementation and Performance}
+\begin{table}[t]
+\centering{}%
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+
+\multicolumn{1}{|c|}{} & \# Agents & MAT  & Clusters  & Movements & Total  \\ \hline
+ \#1 &40& 0.24 & 0.410  &2.35 &  3.001 \tabularnewline
+ \#2 &100& 0.315  &0.398& 7.43 & 8.143\tabularnewline
+ \#3 &100& 0.270 &0.331& 7.21 &  7.811\tabularnewline
+\hline
+\end{tabular}
+\caption{\em The performance of our algorithm on three challenging benchmarks (Benchmark \#1, \#2, \#3. We highlight the running time (in seconds) of medial axis computation (MAT), cluster computation (Clusters), agent movements (Movement) and the total running time.}
+\vspace{-0.5cm}
+\label{tab:benchmark}
+\end{table}
+In this section, we describe our implementation and highlight the
+performance on three different benchmarks. In the first benchmark, we compare
+our approach with a recent algorithm on continuous space centralized planning.
+~\cite{DBLP:journals/corr/SoloveyYZH15}. The other two benchmarks represent challenging scenarios.
+%in the table \ref{tab:benchmark}, we call it \emph{Optimal Guarantee}. We then implement other two benchmarks with a large number(100) of agents to show the robust of our algorithm. 
+We have implemented our algorithms in C++
+on a Intel Core i7 CPU running at 3.30GHz with 16GB of RAM
+and running Windows 7. All of the timing results are generated on
+a single core.
+%In all of our benchmarks,
+%we use red lines and black circles to mark the medial-axis and a clustering result. We highlight the graph paths of clusters as green lines. 
+All of the running times are shown in the table \ref{tab:benchmark} and we show the time spent in different stages of the algorithm.
+%separate the result to a calculation of agents' movements and pre-computation stages. The calculation of agents' movements includes the overhead of calculating all agents' movements to move them to their individual goals. The pre-computation stage includes all medial-axis calculation, clustering agents, tight pattern checking, and the overhead of building the connections of clusters. 
+
+\noindent {\bf Benchmark 1:} We simulate the scenario shown in~\cite{DBLP:journals/corr/SoloveyYZH15}.
+There are $40$ agents in a rectangle scenario and we highlight their start and goal positions. We can compute all the paths in $3$ seconds, as opposed to taking  $311$  seconds in ~\cite{DBLP:journals/corr/SoloveyYZH15}.
+%start positions and goal positions with red and blue color respectively. The first picture of Figure ~\ref{fig:benchmarks} shows the scenario. Our method does not target on finding the optimal paths for all agents, and our running time outperforms their results.  
+
+\noindent {\bf Benchmark 2:} We simulate a rectangle-shaped scenario with some complex-shaped obstacles. 
+There are $100$ agents in this scenario. Each agent randomly selects another agents' start position as its goal position. We assume that the agents' goal positions are not overlapping. We can compute collision free paths in about $8$ sec.
+%The Second picture of Figure ~\ref{fig:benchmarks} shows the scenario. 
+
+\noindent {\bf Benchmark 3:}
+We simulate a leaf-like scenario which has a complex boundary shape with a lot of edges. Prior methods will not work in such a scenario. %complicated edges. 
+There are $100$ agents in this scene and each agent randomly pick another agents' start position as its goal position. We assume that the goal positions are not overlapping and our algorithm takes about $8$ seconds.
+%agents' goals are not overlapping. The right-most picture of Figure ~\ref{fig:benchmarks} shows the scenario. 
+
