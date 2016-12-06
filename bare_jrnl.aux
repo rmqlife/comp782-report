@@ -1,4 +1,19 @@
 \relax 
+\citation{katsev2013efficient}
+\citation{luna2011push}
+\citation{turpin2013goal}
+\citation{krontiris2013feasibility}
+\citation{karamouzas2013space}
+\citation{turpin2013trajectory}
+\citation{turpin2013concurrent}
+\select@language{english}
+\@writefile{toc}{\select@language{english}}
+\@writefile{lof}{\select@language{english}}
+\@writefile{lot}{\select@language{english}}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces {\bf  Medial Axis based Multi-Agent Planning:} {\em  We provide an overview of our approach. We show the computed path $\mathcal  {P}$ for one of the agents moves toward its goal position. Given the black obstacles, we compute the medial axis of the workspace (shown in red) and use that to compute clusters of blue agents. The properties of medial axis are used to design resolution-complete multi-agent planner for arbitrary obstacles. Our approach results in speedups improvement over prior methods.}\relax }}{1}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:overview}{{1}{1}}
 \citation{helbing1995social}
 \citation{pelechano2007controlling}
 \citation{yeh2008composite}
@@ -25,38 +40,92 @@
 \citation{DBLP:journals/corr/SoloveyYZH15}
 \citation{DBLP:journals/corr/SoloveyYZH15}
 \citation{DBLP:journals/corr/SoloveyYZH15}
-\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}}
-\@writefile{toc}{\contentsline {section}{\numberline {II}Prior Work}{1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}Decentralized Methods}{1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}Centralized Methods}{1}}
-\@writefile{toc}{\contentsline {section}{\numberline {III} Limitations and Future Work}{1}}
+\citation{blum1978shape}
+\citation{giesen2012medial}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Prior Work}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}Decentralized Methods}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}Centralized Methods}{2}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Background and Notation}{2}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Medial-axis and Circle Packing}{2}}
+\citation{graham1998dense}
+\citation{graham1998dense}
+\citation{galiev2013linear}
+\citation{graham1998dense}
+\citation{graham1998dense}
+\newlabel{thm:included}{{1}{3}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Clustering the agents based on medial axis. This is used in Algorithm 2, Step 2.\relax }}{3}}
+\newlabel{algo:clusterAgents}{{1}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Agents Arrangement in a Cluster}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \em  This figure shows a circle of the medial-axis and a set of clustered agents. The elements are arranged tightly, and we use different color to represent the elements in different loops. The dotted circle represents an empty element $\mathbf  {e}$. The two arrows, $\mathbf  {a}$ to $\mathbf  {e}$ and $\mathbf  {b}$ to $\mathbf  {e}$ show the inter-loop and intra-loop movements, respectively. The right figure shows another tight arrangement with different number of elements.\relax }}{3}}
+\newlabel{fig:circular}{{2}{3}}
+\newlabel{lem:loop}{{1}{3}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Multi-Agent Planning Overall Algorithm\relax }}{4}}
+\newlabel{algo:overview}{{2}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Element Movements}{4}}
+\newlabel{thm:min}{{2}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \em  This figure shows how Theorem \ref  {thm:min} formulation can be used for moving/exchanging an element $\mathbf  {c}$ with $\mathbf  {c'}$. The left picture shows how two non-empty elements can exchange their positions, based on the arrows. To move a non-empty element $\mathbf  {c}$ to the other non-empty element $\mathbf  {c'}$, it has to be an empty element to place the $\mathbf  {c'}$ and then move $\mathbf  {c}$ to the position $\mathbf  {p_c'}$. This is shown as the third step with the arrow, which moves $\mathbf  {c'}$ to $\mathbf  {p_c}$. \relax }}{4}}
+\newlabel{fig:exchange}{{3}{4}}
+\newlabel{lem:min}{{2}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-A}}Intra-loop Exchange}{4}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Intra-loop Exchange: This is used in Algorithm 2, Steps 7 and 8.\relax }}{4}}
+\newlabel{algo:intraloop}{{3}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-B}}Inter-cluster Exchange}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \em  Sequences of intra-loop exchange processing: The upper left picture shows two elements $\mathbf  {c} \in \mathbf  {T}$ and $\mathbf  {c'} \in \mathbf  {T}$ with an empty element $\mathbf  {e} \in \mathbf  {T'}$. $\mathbf  {c}$ moves to $\mathbf  {p_e}$ (shown with an arrow) in this picture. In the upper right picture, all of the agents in $\mathbf  {T}$ push each other to move simultaneously so that $\mathbf  {c}$ could connect to $\mathbf  {e}$ in $\mathbf  {T}$. In the bottom left picture, $\mathbf  {c}$ moves back to loop $\mathbf  {T}$ and $\mathbf  {c'}$ temporarily move to loop $\mathbf  {T'}$. In the bottom right picture, all the agents push each other back to their primitive position and $\mathbf  {c'}$ moves towards $\mathbf  {T}$, thus finishing the exchange processing step. \relax }}{5}}
+\newlabel{fig:intra}{{4}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \em  This figure shows the sequence of how elements $\mathbf  {a}$ and $\mathbf  {d}$ exchange their positions when they are not in the nearby loop. In this example, there are three loops, and we highlight each of them in different colors. The upper row shows how $\mathbf  {a}$ moves towards $\mathbf  {p_d}$ with an empty element $\mathbf  {e}$. In each inter-loop movement, the pairs of elements are moved to another loop. After $\mathbf  {a}$ reaches its goal, the two pairs of elements are moved away from their original loops. In the bottom row, the algorithm uses the same strategy as the left column to return $\mathbf  {e}$ back to its original position. Throughout this process, every element that has been moved returns to its original position.\relax }}{5}}
+\newlabel{fig:inter}{{5}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Resolution-Completeness}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \em  We show three challenging benchmarks with $40-100$ agents, where techniques based on decentralized methods may not work well. We highlight the start positions (blue agents), the goal positions (red agents) and the medial-axis, the path between the clusters (green). Our algorithm can compute the paths for all agents in $3-8$ seconds.\relax }}{5}}
+\newlabel{fig:benchmarks}{{6}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-A}}Completeness of Intra-cluster Computation}{5}}
+\newlabel{lem:intra-unit complete}{{3}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-B}}Connect Clusters}{5}}
+\newlabel{them:clean}{{3}{5}}
+\newlabel{def:connect}{{1}{5}}
+\newlabel{lem:intertcluster}{{4}{5}}
+\newlabel{lem:complete}{{5}{5}}
+\citation{giesen2012medial}
+\citation{DBLP:journals/corr/SoloveyYZH15}
+\citation{DBLP:journals/corr/SoloveyYZH15}
+\citation{DBLP:journals/corr/SoloveyYZH15}
 \bibstyle{IEEEtran}
 \bibdata{reference}
-\bibcite{helbing1995social}{1}
-\bibcite{pelechano2007controlling}{2}
-\bibcite{yeh2008composite}{3}
-\bibcite{van2011reciprocal}{4}
-\bibcite{he2013meso}{5}
-\bibcite{kimmel2012maintaining}{6}
-\bibcite{cui2012pareto}{7}
-\bibcite{sanchez2002using}{8}
-\bibcite{peng2005coordinating}{9}
-\bibcite{velagapudi2010decentralized}{10}
-\bibcite{luna2011push}{11}
-\bibcite{de2013push}{12}
-\bibcite{sajid2012multi}{13}
-\bibcite{katsev2013efficient}{14}
-\bibcite{hart1968formal}{15}
-\bibcite{korf1985depth}{16}
-\bibcite{felner2012partial}{17}
-\bibcite{carpin2002parallel}{18}
-\bibcite{ferguson2006replanning}{19}
-\bibcite{ferner2013odrm}{20}
-\bibcite{dresner2008multiagent}{21}
-\bibcite{calinescu2008reconfigurations}{22}
-\bibcite{vsvestka1998coordinated}{23}
-\bibcite{DBLP:journals/corr/SoloveyYZH15}{24}
-\@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  A: Proof of the First Zonklar Equation}{2}}
-\@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  B}{2}}
-\@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  C: Acknowledgment}{2}}
-\@writefile{toc}{\contentsline {section}{References}{2}}
+\bibcite{katsev2013efficient}{1}
+\bibcite{luna2011push}{2}
+\bibcite{turpin2013goal}{3}
+\bibcite{krontiris2013feasibility}{4}
+\bibcite{karamouzas2013space}{5}
+\bibcite{turpin2013trajectory}{6}
+\bibcite{turpin2013concurrent}{7}
+\bibcite{helbing1995social}{8}
+\bibcite{pelechano2007controlling}{9}
+\bibcite{yeh2008composite}{10}
+\bibcite{van2011reciprocal}{11}
+\bibcite{he2013meso}{12}
+\bibcite{kimmel2012maintaining}{13}
+\bibcite{cui2012pareto}{14}
+\bibcite{sanchez2002using}{15}
+\bibcite{peng2005coordinating}{16}
+\bibcite{velagapudi2010decentralized}{17}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces \em  The performance of our algorithm on three challenging benchmarks (Benchmark \#1, \#2, \#3. We highlight the running time (in seconds) of medial axis computation (MAT), cluster computation (Clusters), agent movements (Movement) and the total running time.\relax }}{6}}
+\newlabel{tab:benchmark}{{I}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Analysis}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}Implementation and Performance}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {IX} Limitations and Future Work}{6}}
+\@writefile{toc}{\contentsline {section}{References}{6}}
+\bibcite{de2013push}{18}
+\bibcite{sajid2012multi}{19}
+\bibcite{hart1968formal}{20}
+\bibcite{korf1985depth}{21}
+\bibcite{felner2012partial}{22}
+\bibcite{carpin2002parallel}{23}
+\bibcite{ferguson2006replanning}{24}
+\bibcite{ferner2013odrm}{25}
+\bibcite{dresner2008multiagent}{26}
+\bibcite{calinescu2008reconfigurations}{27}
+\bibcite{vsvestka1998coordinated}{28}
+\bibcite{DBLP:journals/corr/SoloveyYZH15}{29}
+\bibcite{blum1978shape}{30}
+\bibcite{giesen2012medial}{31}
+\bibcite{graham1998dense}{32}
+\bibcite{galiev2013linear}{33}

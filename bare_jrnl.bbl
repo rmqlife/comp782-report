@@ -21,6 +21,42 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{katsev2013efficient}
+M.~Katsev, J.~Yu, and S.~M. LaValle, ``Efficient formation path planning on
+  large graphs,'' in \emph{Robotics and Automation (ICRA), 2013 IEEE
+  International Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
+  2013, pp. 3606--3611.
+
+\bibitem{luna2011push}
+R.~Luna and K.~E. Bekris, ``Push and swap: Fast cooperative path-finding with
+  completeness guarantees,'' in \emph{IJCAI}, 2011, pp. 294--300.
+
+\bibitem{turpin2013goal}
+M.~Turpin, K.~Mohta, N.~Michael, and V.~Kumar, ``Goal assignment and trajectory
+  planning for large teams of aerial robots.'' in \emph{Robotics: Science and
+  Systems}, 2013.
+
+\bibitem{krontiris2013feasibility}
+A.~Krontiris, R.~Luna, and K.~E. Bekris, ``From feasibility tests to path
+  planners for multi-agent pathfinding,'' in \emph{Sixth Annual Symposium on
+  Combinatorial Search}, 2013.
+
+\bibitem{karamouzas2013space}
+I.~Karamouzas, R.~Geraerts, and A.~F. van~der Stappen, ``Space-time group
+  motion planning,'' in \emph{Algorithmic Foundations of Robotics X}.\hskip 1em
+  plus 0.5em minus 0.4em\relax Springer, 2013, pp. 227--243.
+
+\bibitem{turpin2013trajectory}
+M.~Turpin, N.~Michael, and V.~Kumar, ``Trajectory planning and assignment in
+  multirobot systems,'' in \emph{Algorithmic foundations of robotics X}.\hskip
+  1em plus 0.5em minus 0.4em\relax Springer, 2013, pp. 175--190.
+
+\bibitem{turpin2013concurrent}
+------, ``Concurrent assignment and planning of trajectories for large teams of
+  interchangeable robots,'' in \emph{Robotics and Automation (ICRA), 2013 IEEE
+  International Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
+  2013, pp. 842--848.
+
 \bibitem{helbing1995social}
 D.~Helbing and P.~Molnar, ``Social force model for pedestrian dynamics,''
   \emph{Physical review E}, vol.~51, no.~5, p. 4282, 1995.
@@ -76,10 +112,6 @@ P.~Velagapudi, K.~Sycara, and P.~Scerri, ``Decentralized prioritized planning
   2010 IEEE/RSJ International Conference on}.\hskip 1em plus 0.5em minus
   0.4em\relax IEEE, 2010, pp. 4603--4609.
 
-\bibitem{luna2011push}
-R.~Luna and K.~E. Bekris, ``Push and swap: Fast cooperative path-finding with
-  completeness guarantees,'' in \emph{IJCAI}, 2011, pp. 294--300.
-
 \bibitem{de2013push}
 B.~de~Wilde, A.~W. ter Mors, and C.~Witteveen, ``Push and rotate: cooperative
   multi-agent path planning,'' in \emph{Proceedings of the 2013 international
@@ -90,12 +122,6 @@ B.~de~Wilde, A.~W. ter Mors, and C.~Witteveen, ``Push and rotate: cooperative
 \bibitem{sajid2012multi}
 Q.~Sajid, R.~Luna, and K.~E. Bekris, ``Multi-agent pathfinding with
   simultaneous execution of single-agent primitives.'' in \emph{SOCS}, 2012.
-
-\bibitem{katsev2013efficient}
-M.~Katsev, J.~Yu, and S.~M. LaValle, ``Efficient formation path planning on
-  large graphs,'' in \emph{Robotics and Automation (ICRA), 2013 IEEE
-  International Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
-  2013, pp. 3606--3611.
 
 \bibitem{hart1968formal}
 P.~E. Hart, N.~J. Nilsson, and B.~Raphael, ``A formal basis for the heuristic
@@ -149,5 +175,24 @@ K.~Solovey, J.~Yu, O.~Zamir, and D.~Halperin, ``Motion planning for unlabeled
   discs with optimality guarantees,'' \emph{CoRR}, vol. abs/1504.05218, 2015.
   [Online]. Available: \url{http://arxiv.org/abs/1504.05218}
 \BIBentrySTDinterwordspacing
+
+\bibitem{blum1978shape}
+H.~Blum and R.~N. Nagel, ``Shape description using weighted symmetric axis
+  features,'' \emph{Pattern recognition}, vol.~10, no.~3, pp. 167--180, 1978.
+
+\bibitem{giesen2012medial}
+J.~Giesen, B.~Miklos, and M.~Pauly, ``The medial axis of the union of inner
+  voronoi balls in the plane,'' \emph{Computational Geometry}, vol.~45, no.~9,
+  pp. 515--523, 2012.
+
+\bibitem{graham1998dense}
+R.~L. Graham, B.~D. Lubachevsky, K.~J. Nurmela, and P.~R. {\"O}sterg{\aa}rd,
+  ``Dense packings of congruent circles in a circle,'' \emph{Discrete
+  Mathematics}, vol. 181, no.~1, pp. 139--154, 1998.
+
+\bibitem{galiev2013linear}
+S.~I. Galiev and M.~S. Lisafina, ``Linear models for the approximate solution
+  of the problem of packing equal circles into a given domain,'' \emph{European
+  Journal of Operational Research}, vol. 230, no.~3, pp. 505--514, 2013.
 
 \end{thebibliography}
